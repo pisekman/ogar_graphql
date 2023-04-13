@@ -1,11 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+const formatDate = (date) => new Date(date).toLocaleDateString();
 
 const PostPageContent = ({ post }) => {
-  const { title, content } = post;
+  const { date, title, content, author, categories } = post;
+  const haveCategories = Boolean(categories?.nodes?.length);
+
   return (
-    <article className='container postPage'>
+    <article>
       <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      <p className='post-meta'>
+        <span role='img' aria-label='writing hand'>
+          ✍️
+        </span>
+        {author.node.name} on {formatDate(date)}
+      </p>
+      <div
+        className='post-content'
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+      {haveCategories ? (
+        <div className='categories-list'>
+          <h2>Categorized As</h2>
+          <ul>
+            {categories.nodes.map((category) => {
+              const { slug, name } = category;
+              return (
+                <Link to={`/category/${slug}`} key={slug}>
+                  <li key={slug}>{name}</li>
+                </Link>
+              );
+            })}
+          </ul>
+        </div>
+      ) : null}
     </article>
   );
 };

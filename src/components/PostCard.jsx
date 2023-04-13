@@ -6,6 +6,8 @@ const formatDate = (date) => new Date(date).toLocaleDateString();
 export default function PostCard({ post }) {
   const { title, date, slug, featuredImage, content } = post;
 
+  console.log(featuredImage, 'featuredImage');
+
   return (
     <div className='post-card'>
       {featuredImage ? (

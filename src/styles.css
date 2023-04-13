@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #252527;
+  background: #fd746c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff9068, #fd746c);
+  background: linear-gradient(to right, #ff9068, #fd746c);
+}
+
+.container {
+  max-width: 1080px;
+  /* padding: */
+}
+.mainContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+.mainContainer--left {
+  max-width: 70%;
+  flex-grow: 1;
+}
+
+.mainContainer--right {
+  width: 30%;
+  background-color: aqua;
+}
+
+.navbar {
+  display: flex;
+  background-color: red;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar p {
+  padding: 10px;
+}
+
+.postPage {
+  padding: 50px;
+}
+
+.post-card {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+
+.post-card img {
+  height: auto;
+  max-height: 300px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
