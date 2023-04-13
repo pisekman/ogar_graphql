@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import { client } from "./lib/apollo"
+import HomePage from './Pages/HomePage';
+import PostPage from './Pages/PostPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client} >
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/:slug" element={<PostPage />} />
+        </Routes>
+
+      </BrowserRouter>
+
+    </ApolloProvider>
+
+
+
+// </Switch>
   );
 }
 
