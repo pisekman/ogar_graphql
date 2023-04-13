@@ -1,10 +1,11 @@
 import React from 'react';
 
 const PostPageContent = ({ post }) => {
-  const { title } = post;
+  const { title, content } = post;
   return (
-    <article>
+    <article className='container postPage'>
       <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: content }}></div>
     </article>
   );
 };

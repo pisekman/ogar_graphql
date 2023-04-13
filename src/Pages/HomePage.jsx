@@ -3,9 +3,11 @@ import PostsList from '../components/PostsList';
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Blog</h1>
-      <PostsList />
+    <div className='mainContainer container'>
+      <div className='mainContainer--left'>
+        <PostsList />
+      </div>
+      <div className='mainContainer--right'>rightSide</div>
     </div>
   );
 };

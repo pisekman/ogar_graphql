@@ -6,11 +6,13 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from "./lib/apollo"
 import HomePage from './Pages/HomePage';
 import PostPage from './Pages/PostPage';
+import Navbar from './Pages/Navbar';
 
 function App() {
   return (
     <ApolloProvider client={client} >
       <BrowserRouter>
+        <Navbar />
         <Routes>
 
           <Route path="/" element={<HomePage />} />

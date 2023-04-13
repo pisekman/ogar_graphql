@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const formatDate = (date) => new Date(date).toLocaleDateString();
 
 export default function PostCard({ post }) {
-  const { title, date, slug, featuredImage } = post;
+  const { title, date, slug, featuredImage, content } = post;
 
   return (
     <div className='post-card'>

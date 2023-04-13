@@ -9,6 +9,7 @@ const GET_ALL_POST = gql`
         slug
         title
         date
+        content
       }
     }
   }
