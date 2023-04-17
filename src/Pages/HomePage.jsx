@@ -1,5 +1,6 @@
 import React from 'react';
 import PostsList from '../components/PostsList';
+import PostLatest from '../components/PostLatest';
 
 const HomePage = () => {
   return (
@@ -7,7 +8,9 @@ const HomePage = () => {
       <div className='mainContainer--left'>
         <PostsList />
       </div>
-      <div className='mainContainer--right'>rightSide</div>
+      <div className='mainContainer--right'>
+        <PostLatest />
+      </div>
     </div>
   );
 };

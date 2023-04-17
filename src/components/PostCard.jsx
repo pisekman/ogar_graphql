@@ -6,6 +6,11 @@ const formatDate = (date) => new Date(date).toLocaleDateString();
 export default function PostCard({ post }) {
   const { title, date, slug, featuredImage, content } = post;
 
+  const substractedText = content.substring(
+    0,
+    content.indexOf('</p>'),
+  );
+
   console.log(featuredImage, 'featuredImage');
 
   return (
@@ -14,6 +19,7 @@ export default function PostCard({ post }) {
         <img
           src={featuredImage.node.sourceUrl}
           alt={featuredImage.node.altText}
+          style={{ height: '350px' }}
         />
       ) : null}
       <Link to={`/blog/${slug}`}>
@@ -23,6 +29,9 @@ export default function PostCard({ post }) {
         <p>
           <span className='text-bold'>Date:</span> {formatDate(date)}
         </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: substractedText }}
+        ></div>
       </div>
     </div>
   );

@@ -1,14 +1,18 @@
 import React from 'react';
 
 const Navbar = () => {
+  const navItem = [
+    'Strona glowna',
+    'O nas',
+    'Kontakt',
+    'Instagram',
+    'Social',
+  ];
   return (
     <nav className='navbar'>
-      <p>Strona glowna</p>
-      <p>O nas</p>
-      <p>Ogar Polski</p>
-      <p>Kontakt</p>
-      <p>Instagram</p>
-      <p>Facebook</p>
+      {navItem.map((nav) => (
+        <p>{nav.toLocaleUpperCase()}</p>
+      ))}
     </nav>
   );
 };

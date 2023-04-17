@@ -8,7 +8,7 @@ const PostPageContent = ({ post }) => {
   const haveCategories = Boolean(categories?.nodes?.length);
 
   return (
-    <article>
+    <article className='wrapper'>
       <h1>{title}</h1>
       <p className='post-meta'>
         <span role='img' aria-label='writing hand'>

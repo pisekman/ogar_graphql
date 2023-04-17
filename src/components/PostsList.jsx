@@ -9,6 +9,7 @@ const GET_ALL_POST = gql`
         slug
         title
         date
+        content
         featuredImage {
           node {
             sourceUrl
@@ -24,21 +25,22 @@ const GET_ALL_POST = gql`
 const PostsList = () => {
   const { loading, error, data } = useQuery(GET_ALL_POST);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading page...</p>;
   if (error) return <p>Error..</p>;
 
-  //   const postsFound = Boolean(data?.posts.nodes.length)
+  const postsFound = Boolean(data?.posts.nodes.length);
 
-  console.log(data.posts, 'data');
+    console.log(data.posts, 'data');
 
-  return (
-    <div>
-      <p>fetch datas</p>
-      {data.posts.nodes.map((post) => {
-        return <PostCard post={post} />;
-      })}
-    </div>
-  );
+    return (
+      <div>
+        <p>fetch datas</p>
+        {postsFound &&
+          data.posts.nodes.map((post) => {
+            return <PostCard post={post} />;
+          })}
+      </div>
+    );
 };
 
 export default PostsList;

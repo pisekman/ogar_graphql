@@ -2,6 +2,7 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
 import PostPageContent from '../components/PostPageContent';
+
 const GET_POST_BY_SLUG = gql`
   query getPostBySlug($slug: ID!) {
     post(id: $slug, idType: SLUG) {
@@ -25,7 +26,7 @@ const GET_POST_BY_SLUG = gql`
 
 const PostPage = () => {
   const { slug } = useParams();
-  console.log(slug, 'props');
+  // console.log(slug, 'props');
   const { loading, error, data } = useQuery(GET_POST_BY_SLUG, {
     variables: {
       slug: slug,
@@ -36,7 +37,7 @@ const PostPage = () => {
 
   return (
     <div className='page-container'>
-      <Link to='/'>← Home</Link>
+      <Link to='/'>← Go Home Page</Link>
       {loading ? (
         <p>Loading…</p>
       ) : error ? (
