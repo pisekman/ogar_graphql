@@ -9,17 +9,24 @@ import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
 import "./styles.css"
 import Header from './Pages/Header';
+import { Layout } from './Pages/Layout';
 function App() {
   return (
     <ApolloProvider client={client} >
       <BrowserRouter>
-        <Header />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/blog/:slug" element={<PostPage />} />
-        </Routes>
-        <Footer />
+
+        <Layout>
+
+
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/blog/:slug" element={<PostPage />} />
+          </Routes>
+          <Footer />
+        </Layout>
+
 
       </BrowserRouter>
 

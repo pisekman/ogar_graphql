@@ -22,16 +22,20 @@ export default function PostCard({ post }) {
           style={{ height: '350px' }}
         />
       ) : null}
-      <Link to={`/blog/${slug}`}>
-        <h3>{title}</h3>
-      </Link>
-      <div className='metadata'>
-        <p>
-          <span className='text-bold'>Date:</span> {formatDate(date)}
-        </p>
-        <div
-          dangerouslySetInnerHTML={{ __html: substractedText }}
-        ></div>
+      <div className='post-card--text'>
+        <Link to={`/blog/${slug}`}>
+          <h3>{title}</h3>
+        </Link>
+
+        <div className='metadata'>
+          <p>
+            <span className='text-bold'>Date:</span>{' '}
+            {formatDate(date)}
+          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: substractedText }}
+          />
+        </div>
       </div>
     </div>
   );

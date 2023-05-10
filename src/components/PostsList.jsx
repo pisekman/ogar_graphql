@@ -33,7 +33,7 @@ const PostsList = () => {
     console.log(data.posts, 'data');
 
     return (
-      <div>
+      <div className='post-list'>
         {postsFound &&
           data.posts.nodes.map((post) => {
             return <PostCard post={post} />;
