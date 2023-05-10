@@ -8,10 +8,12 @@ import PostPage from './Pages/PostPage';
 import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
 import "./styles.css"
+import Header from './Pages/Header';
 function App() {
   return (
     <ApolloProvider client={client} >
       <BrowserRouter>
+        <Header />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

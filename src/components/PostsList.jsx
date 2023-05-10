@@ -34,7 +34,6 @@ const PostsList = () => {
 
     return (
       <div>
-        <p>fetch datas</p>
         {postsFound &&
           data.posts.nodes.map((post) => {
             return <PostCard post={post} />;

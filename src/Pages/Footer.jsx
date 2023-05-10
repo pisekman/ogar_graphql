@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <div>Tematyka</div>
+      <div>Archiwum</div>
+      <div>Mapa bloga</div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -5,12 +5,12 @@ import PostLatest from '../components/PostLatest';
 const HomePage = () => {
   return (
     <div className='mainContainer container'>
-      <div className='mainContainer--left'>
+      <section className='mainContainer--left'>
         <PostsList />
-      </div>
-      <div className='mainContainer--right'>
+      </section>
+      <aside className='mainContainer--right'>
         <PostLatest />
-      </div>
+      </aside>
     </div>
   );
 };

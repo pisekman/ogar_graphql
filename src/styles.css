@@ -17,9 +17,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #252527;
-  background: #fd746c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ff9068, #fd746c);
-  background: linear-gradient(to right, #ff9068, #fd746c);
+  background: #fff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f0eae8, #fd746c);
+  background: linear-gradient(to right, #f0eae8, #ede0e0);
+}
+
+header img {
+width: 100%;
+  height: 250px;
+  object-fit: cover;
+  
 }
 
 .container {
@@ -36,17 +43,19 @@ body {
   /* flex-grow: 1; */
   align-items: flex-start;
   justify-content: center;
+  margin: 1rem 0;
   /* justify-content: space-around; */
 }
 
 .mainContainer--left {
   max-width: 100%;
   flex-grow: 1;
+  padding: 1rem;
+
 }
 
 .mainContainer--right {
   width: 30%;
-  height: 1000px;
   flex-grow: 1;
   background-color: aqua;
 }
@@ -56,6 +65,12 @@ body {
   background-color: red;
   align-items: center;
   justify-content: center;
+}
+
+nav p:hover {
+  transform: scale(1.1);
+  color: #C09F5A;
+  cursor: pointer;
 }
 
 .navbar p {
@@ -68,18 +83,20 @@ body {
 
 .post-card {
   width: 100%;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.016);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
+    box-shadow: 0 0 2px 0 rgba(51, 51, 51, 0.08), 0 0 2px 0 rgba(51, 51, 51, 0.08);
 }
 
 
 .post-card img {
-  height: auto;
-  max-height: 300px;
   max-width: 100%;
+  width: auto;
+  height: auto;
   margin-bottom: 20px;
+  object-fit: contain;
 }
 
 .metadata {
@@ -87,12 +104,15 @@ body {
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: calc(100vw - 150px);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.wrapper ul {
+  list-style: none;
 }
 
 .wrapper figure img {
@@ -100,6 +120,9 @@ body {
   align-items: center;
   justify-content: center; 
   max-width: 500px;
+    object-fit: contain;
+    height: auto;
+
 }
 
 .wrapper figure {
@@ -107,4 +130,17 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+footer {
+  background-color: #1d2024;
+  padding: 60px 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+footer div {
+  padding: 10px;
 }
