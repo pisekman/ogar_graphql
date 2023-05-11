@@ -70,15 +70,16 @@ width: 100%;
   width: 100%;
 }
 
+nav p {
+  padding: 10px;
+
+}
 nav p:hover {
   transform: scale(1.1);
   color: #C09F5A;
   cursor: pointer;
 }
 
-.navbar p {
-  padding: 10px;
-}
 
 .postPage {
   padding: 50px;

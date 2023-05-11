@@ -18,10 +18,7 @@ const PostLatest = () => {
 
   return (
     <div>
-      {isPosts &&
-        data.posts.nodes.map((post) => {
-          return <p>{post.title}</p>;
-        })}
+      {isPosts && data.posts.nodes.map((post) => <p>{post.title}</p>)}
     </div>
   );
 };
