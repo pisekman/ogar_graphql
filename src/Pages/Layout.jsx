@@ -6,5 +6,5 @@ export const Layout = ({ children }) => {
   useEffect(() => {
     console.log(windowHeight);
   }, [windowHeight]);
-  return <div>{children}</div>;
+  return <div className='layout'>{children}</div>;
 };
